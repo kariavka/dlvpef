@@ -1,5 +1,12 @@
 {% extends 'base.jinja' %}
 
+{% block ngcontroller %}ng-controller="HomeCtrl"{% endblock %}
+
+{% block js %}
+    {{ super() }}
+    <script src="{{ static('this/js/angularjs/controllers/homectrl.js') }}"></script>
+{% endblock %}
+
 {% block content %}
     <h1>Hello DLVPEF</h1>
 {% endblock %}

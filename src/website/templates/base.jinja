@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DLVPEF</title>
+
+    <title>{% block title %}DLVPEF{% endblock %}</title>
+
+    <meta name="description" content="" />
+    <meta name="author" content="valsorym <valsorym.e@gmail.com>" />
+
+    <link rel="icon" href="{{ static('this/img/favicon.ico') }}" />
+    <link rel="icon" href="{{ static('this/img/favicon.png') }}" type="image/png" />
+
+    <!-- Bootstrap Grid -->
+    <link href="{{ static('lib/bootstrap-grid/3.3.5/bootstrap.min.css') }}" rel="stylesheet" />
+
+    <!--[if lt IE 9]>
+      <script src="{{ static('lib/html5shiv/3.7.2/html5shiv.min.js') }}"></script>
+      <script src="{{ static('lib/respond/1.4.2/respond.min.js') }}"></script>
+    <![endif]-->
+
+    <!-- Main CSS -->
+    <link href="{{ static('this/css/main.css') }}" rel="stylesheet" />
+
 </head>
-<body>
-    {% block content %}{% endblock %}
+<body ng-app="appDlvpef" {% block ngcontroller %}{% endblock %} ng-cloak>
+
+    {% block content %}
+    {% endblock %}
+
+    {% block js %}
+        <!-- jQuery -->
+        <script src="{{ static('lib/jquery/1.11.3/jquery-1.11.3.min.js') }}"></script>
+
+        <!-- AngularJs -->
+        <script src="{{ static('lib/angularjs/1.2.29/angular.min.js') }}"></script>
+        <script src="{{ static('this/js/angularjs/app.js') }}"></script>
+    {% endblock %}
 </body>
 </html>
 
