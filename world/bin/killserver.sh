@@ -25,7 +25,7 @@ if [ -e "$BASE_DIR/world/var/run/gunicorn.pid" ]; then
     for pid in `cat "$BASE_DIR/world/var/run/gunicorn.pid"`
     do
         echo "Killed: $pid"
-        kill -TERM $pid
+        sudo kill -TERM $pid
 
         # kill -KILL $pid
         # kill -s KILL $pid
