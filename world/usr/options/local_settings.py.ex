@@ -2,7 +2,6 @@
 
 # DJANGO DEFAULT SETTINGS
 DEBUG = False
-TEMPLATE_DEBUG = DEBUG
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', ]
 
 # DATABASES
@@ -23,6 +22,7 @@ DATABASES = {
 ## SECRET_KEY = 'bbz2u4=ja#gv$3n^4$g%(y+eoegsv(1xp2#7_^=oxilhq)afy='
 
 # EMAIL SETTINGS
+# ** For Gmail: http://www.google.com/accounts/DisplayUnlockCaptcha
 # ** Specify the mail settings to inform administrator about errors on the
 #    server and and communication with users.
 ## EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

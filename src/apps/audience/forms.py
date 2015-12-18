@@ -1,3 +1,5 @@
+from smtplib import SMTPAuthenticationError
+
 from django import forms
 from django.utils import timezone
 from django.db.models import Q
@@ -40,13 +42,16 @@ class FeedbackForm(forms.ModelForm):
                 )
 
             # Send mail.
-            send_mail(
-                message_title,
-                message_content,
-                settings.EMAIL_HOST_USER,
-                [i[0] for i in subscribers],
-                fail_silently=False,
-            )
+            try:
+                send_mail(
+                    message_title,
+                    message_content,
+                    settings.EMAIL_HOST_USER,
+                    [i[0] for i in subscribers],
+                    fail_silently=False,
+                )
+            except SMTPAuthenticationError:
+                pass
 
         return super(FeedbackForm, self).save(*args, **kwargs)
 
