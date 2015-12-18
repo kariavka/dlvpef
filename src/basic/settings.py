@@ -52,6 +52,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'jinja2extensions',
+
+    'audience',
 )
 
 MIDDLEWARE_CLASSES = (
