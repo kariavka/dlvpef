@@ -1,4 +1,4 @@
-"""basic URL Configuration
+"""Project URL Configuration.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.8/topics/http/urls/
@@ -12,10 +12,34 @@ Class-based views
 Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
+
 """
+from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.conf.urls.static import static
 
+from solid_i18n.urls import solid_i18n_patterns
+
+from basic import views
+
+# Localization URLS.
 urlpatterns = [
+    url(r'^i18n/', include('django.conf.urls.i18n')),
+]
+
+# Admin URLS.
+urlpatterns += [
     url(r'^admin/', include(admin.site.urls)),
 ]
+
+# urlpatterns += i18n_patterns('',
+urlpatterns += solid_i18n_patterns('',
+    url(r'^$', views.HomeView.as_view(), name='home'),
+)
+
+# Static files.
+# ** To run the project on the embedded server Django.
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
