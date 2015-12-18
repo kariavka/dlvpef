@@ -28,8 +28,24 @@
 </head>
 <body ng-app="appDlvpef" {% block ngcontroller %}{% endblock %} ng-cloak>
 
-    {% block content %}
-    {% endblock %}
+    {# container #}
+    <div class="container-fluid">
+        {% block content %}{% endblock %}
+
+        <footer class="row">
+            <div class="col-md-6" style="padding-top:10px;">
+                &copy; 2015 DLVPEF
+            </div>
+            <div class="col-md-6">
+                {{ _('Conception of development') }}:
+                <a href="https://www.livarava.com/" title="livarava">
+                    <span class="livarava-brand"></span>
+                </a>
+            </div>
+        </footer>
+    </div>
+    {# /container #}
+
 
     {% block js %}
         <!-- jQuery -->
