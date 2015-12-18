@@ -1,11 +1,12 @@
 from django.contrib import admin
+from django.utils.translation import ugettext_lazy as _
 
-from audience.models import Listener, Feedback
+from audience.models import Subscriber, Feedback
 
 
-class ListenerAdmin(admin.ModelAdmin):
-    """ ... """
-    list_display = ('email', 'is_active', )
+class SubscriberAdmin(admin.ModelAdmin):
+    """The admin panel for subscribers."""
+    list_display = ('get_subscriber_data', 'is_active', )
     search_fields = list_display
     list_display_links = list_display
 
@@ -18,13 +19,22 @@ class ListenerAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
             'classes': ('full-width', ),
-            'fields': ('email', 'is_active', ),
+            'fields': ('full_name', 'email', 'is_active', ),
         }),
     )
 
+    def get_subscriber_data(self, obj):
+        """Return subscriber data."""
+        if obj.full_name:
+            return '{} ({})'.format(obj.full_name, obj.email)
+        return obj.email
+
+    get_subscriber_data.short_description = _('Subscriber data')
+    get_subscriber_data.admin_order_field = 'email'
+
 
 class FeedbackAdmin(admin.ModelAdmin):
-    """ ... """
+    """The admin panel for feedback."""
     list_display = ('category', 'subject', 'full_name', 'timestamp', )
     search_fields = list_display
     list_display_links = list_display
@@ -51,6 +61,7 @@ class FeedbackAdmin(admin.ModelAdmin):
         return False
 
 
-admin.site.register(Listener, ListenerAdmin)
+# Register new models in Django admin.
+admin.site.register(Subscriber, SubscriberAdmin)
 admin.site.register(Feedback, FeedbackAdmin)
 

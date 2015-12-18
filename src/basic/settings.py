@@ -139,7 +139,7 @@ WSGI_APPLICATION = 'basic.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'mysql.connector.postgresql_psycopg2 ',
+        'ENGINE': 'mysql.connector.postgresql_psycopg2',
         'NAME': '<DATABASE>',
         'USER': '<USER>',
         'PASSWORD': '<PASSWORD>',

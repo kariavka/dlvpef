@@ -1,6 +1,10 @@
 
 ...
 
+./manage.py migrate audience
+
+...
+
 ./manage.py migrate
 ./manage.py collectstatic --noinput
 

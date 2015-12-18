@@ -11,7 +11,7 @@ class HomeView(FormView):
     success_url = reverse_lazy('home')
 
     def form_valid(self, form):
-        """Create new message."""
+        """Save message and inform all subscribers."""
         response = super(HomeView, self).form_valid(form)
         form.save()
         return response
