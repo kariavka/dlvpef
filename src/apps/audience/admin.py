@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from audience.models import Listener
+from audience.models import Listener, Feedback
 
 
 class ListenerAdmin(admin.ModelAdmin):
@@ -22,5 +22,37 @@ class ListenerAdmin(admin.ModelAdmin):
         }),
     )
 
+
+class FeedbackAdmin(admin.ModelAdmin):
+    """ ... """
+    list_display = ('category', 'subject', 'full_name', 'timestamp', )
+    search_fields = list_display
+    list_display_links = list_display
+
+    list_per_page = 20
+    actions_on_top = True
+    ordering = ('category', 'timestamp', )
+
+    save_on_top = True
+
+    fieldsets = (
+        (None, {
+            'classes': ('full-width', ),
+            'fields': ('category', 'subject', 'full_name', 'timestamp',
+                'message', ),
+        }),
+    )
+
+    def has_add_permission(self, request):
+        """..."""
+        return False
+
+    def get_readonly_fields(self, request, obj=None):
+        """ ... """
+        return self.readonly_fields + ('category', 'subject', 'full_name',
+            'timestamp', 'message', ),
+
+
 admin.site.register(Listener, ListenerAdmin)
+admin.site.register(Feedback, FeedbackAdmin)
 
