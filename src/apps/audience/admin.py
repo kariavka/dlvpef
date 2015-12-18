@@ -31,7 +31,7 @@ class FeedbackAdmin(admin.ModelAdmin):
 
     list_per_page = 20
     actions_on_top = True
-    ordering = ('category', 'timestamp', )
+    ordering = ('timestamp', 'category', )
 
     save_on_top = True
 
@@ -43,14 +43,12 @@ class FeedbackAdmin(admin.ModelAdmin):
         }),
     )
 
+    readonly_fields = ('category', 'subject', 'full_name', 'timestamp',
+        'message', )
+
     def has_add_permission(self, request):
         """..."""
         return False
-
-    def get_readonly_fields(self, request, obj=None):
-        """ ... """
-        return self.readonly_fields + ('category', 'subject', 'full_name',
-            'timestamp', 'message', ),
 
 
 admin.site.register(Listener, ListenerAdmin)

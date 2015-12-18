@@ -109,7 +109,9 @@
     {# /The ``D`` page. #}
 
     {# The ``feedback`` page. #}
-    <section class="display feedback">
+    <form class="display feedback" method="post" action="{{ url('home') }}">
+        {% csrf_token %}
+
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
 
@@ -117,30 +119,34 @@
                     <div class="col-md-12">
                         <h1>Formulaire de commentaires</h1>
                         <p>
-                            Formulaire de commentaires contact avec les representants de
-                            l'organisation.
+                            Formulaire de commentaires contact avec les
+                            representants de l'organisation.
                         </p>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-6">
-                        <input type="text" placeholder="Nom complet" />
+                        <input type="text" placeholder="Nom complet" name="full_name" />
+                        {{ form.full_name.errors }}
                     </div>
                     <div class="col-md-6">
-                        <input type="text" placeholder="Categorie" />
+                        <input type="text" placeholder="Categorie" name="category" />
+                        {{ form.category.errors }}
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-12">
-                        <input type="text" placeholder="Assujettir" />
+                        <input type="text" placeholder="Assujettir" name="subject" />
+                        {{ form.subject.errors }}
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-12">
-                        <textarea placeholder="Un message"></textarea>
+                        <textarea placeholder="Un message" name="message"></textarea>
+                        {{ form.message.errors }}
                     </div>
                 </div>
 
@@ -148,7 +154,7 @@
                     <div class="col-md-6">
                     </div>
                     <div class="col-md-6" style="text-align:right;">
-                        <button class="classic">
+                        <button class="classic" type="submit">
                             A envoyer
                         </button>
                     </div>
@@ -156,8 +162,7 @@
 
             </div>
         </div>
-
-    </section>
+    </form>
     {# /The ``feedback`` page. #}
 {% endblock %}
 
