@@ -1,0 +1,89 @@
+{% macro switcher(path, csrf_token) %}
+{# This macro creates the form and function to change the system language.
+
+REQUIREMENTS
+
+    jQuery
+        In to HTML template must be connected `jQuery library`_
+    LocalizationsExtension
+        From ``django-jinja2extensions`` in settings.py of project turn on the
+        ``jinja2extensions.extensions.localizations.LocalizationsExtension``.
+
+PARAMETERS
+
+    path
+        The path for current page, for examples request.get_full_path() or
+        request.path;
+    csrf_token
+        Cross site request token, use csrf_token from the `jinja2exceptions`
+        application.
+
+USAGE
+
+    <!-- Load the macros. -->
+    {% import 'jinja2extensions/macros/localizations.macro.jinja' as language %}
+    {{ language.switcher(request.get_full_path(), csrf_token) }}
+
+    <!-- Event processing function to change the language. -->
+    <script>
+    (function($) {$(document).ready(function() {
+        $("#id_language_list").change(function() {
+            switch_language($(this).val());
+        });
+    })})(jQuery);
+    </script>
+
+    <!-- List of languages as a select box. -->
+    <select id="id_language_list">
+        {% for language_code, language_name in LANGUAGES %}
+            <option value="{{ language_code }}">{{ language_name }}</option>
+        {% endfor %}
+    </select>
+
+.. ......................................................................... ..
+.. _`jQuery library`:
+    https://jquery.com/
+
+#}
+
+{# SETTINGS #}
+{% set switch_language_form_id = 'id_switch_language_form' %}
+{% set switch_language_url = url('set_language') %}
+
+
+<!-- The form for switch the language. -->
+<form id="{{ switch_language_form_id }}" action="{{ switch_language_url }}" method="post">
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}" />
+    <input name="next" type="hidden" value="" />
+    <input name="language" type="hidden" value="" />
+</form>
+
+<script>
+// <!-- Methods for language switching.
+function switch_language(language) {
+    // Send a request to change the language.
+    if (language != "{{ LANGUAGE_CODE }}") {
+        var language_registration_page_list = {
+            {% for language_code, language_name in LANGUAGES %}
+                {% set translated_url = get_translated_url(path, language_code) %}
+                {% if translated_url %}
+                    '{{ language_code }}': '{{ translated_url }}',
+                {% endif %}
+            {% endfor %}
+        };
+
+        var next = language_registration_page_list[language];
+
+        $("#{{ switch_language_form_id }} input[name=language]").val(language);
+        $("#{{ switch_language_form_id }} input[name=next]").val(next);
+        $("#{{ switch_language_form_id }}").submit();
+
+        return true;
+    }
+
+    return false;
+} // end switch_language().
+// -->
+</script>
+{% endmacro %}
+
