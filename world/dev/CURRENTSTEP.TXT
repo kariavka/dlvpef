@@ -1,0 +1,17 @@
+
+...
+
+./manage.py migrate
+./manage.py collectstatic --noinput
+
+
+-- POSTGERSQL --
+$ sudo -u postgres psql
+
+# CREATE USER <USER> WITH password '<PASSWORD>';
+# drop database if exists dlvpef;
+# CREATE DATABASE dlvpef;
+# GRANT ALL privileges ON DATABASE dlvpef TO <USER>;
+
+#\q
+
