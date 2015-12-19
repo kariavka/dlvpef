@@ -3,58 +3,35 @@
 <html lang="{{ LANGUAGE_CODE }}">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DLVPEF</title>
 
-    <title>{% block title %}DLVPEF{% endblock %}</title>
-
-    <meta name="description" content="" />
-    <meta name="author" content="valsorym <valsorym.e@gmail.com>" />
-
-    <link rel="icon" href="{{ static('this/img/favicon.ico') }}" />
-    <link rel="icon" href="{{ static('this/img/favicon.png') }}" type="image/png" />
-
-    <!-- Bootstrap Grid -->
-    <link href="{{ static('lib/bootstrap-grid/3.3.5/bootstrap.min.css') }}" rel="stylesheet" />
-
-    <!--[if lt IE 9]>
-      <script src="{{ static('lib/html5shiv/3.7.2/html5shiv.min.js') }}"></script>
-      <script src="{{ static('lib/respond/1.4.2/respond.min.js') }}"></script>
-    <![endif]-->
-
-    <!-- Main CSS -->
-    <link href="{{ static('this/css/main.css') }}" rel="stylesheet" />
-
+    <link rel="stylesheet" href="{{ static('lib/bootstrap/3.3.6/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ static('this/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ static('this/css/media.css') }}" />
 </head>
-<body ng-app="appDlvpef" {% block ngcontroller %}{% endblock %} ng-cloak>
-
-    {# container #}
-    <div class="container-fluid">
-        {% block content %}{% endblock %}
-
-        <footer class="row">
-            <div class="col-md-6" style="padding-top:10px;">
+<body>
+    {% block content %}{% endblock %}
+    <footer>
+        <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 foot">
+            <div class="copy">
                 &copy; 2015 DLVPEF
             </div>
-            <div class="col-md-6">
-                {{ _('Conception of development') }}:
+            <div class="cons">
+                Conception et développement<br />
+                <a href="#" class="inf">Informations sur le site web</a>
+            </div>
+            <div class="liv">
                 <a href="https://www.livarava.com/" title="livarava">
-                    <span class="livarava-brand"></span>
+                    <img src="{{ static('this/images/logo_livarava.png') }}"/>
                 </a>
             </div>
-        </footer>
-    </div>
-    {# /container #}
-
+        </div>
+    </footer>
 
     {% block js %}
-        <!-- jQuery -->
-        <script src="{{ static('lib/jquery/1.11.3/jquery-1.11.3.min.js') }}"></script>
-
-        <!-- AngularJs -->
-        <script src="{{ static('lib/angularjs/1.2.29/angular.min.js') }}"></script>
-        <script src="{{ static('this/js/angularjs/app.js') }}"></script>
+        <script src="{{ static('lib/jquery/2.1.4/jquery-2.1.4.min.js') }}"></script>
+        <script src="{{ static('lib/bootstrap/3.3.6/js/bootstrap.min.js') }}"></script>
     {% endblock %}
 </body>
 </html>
-

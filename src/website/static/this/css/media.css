@@ -1,0 +1,288 @@
+@media only screen and (max-width:1300px) {
+	.but_form {
+    
+    margin-left: 120px;
+}
+.line2 {
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.line2_sect3 {
+    margin-top: 50px;
+    
+}
+
+.line2_sect4 {
+    margin-top: 50px;
+    
+}
+
+
+
+.content_sect2 {
+    font: 22px "8201", sans-serif;
+    color: #464646;
+    margin-left: 80px;  
+    margin-top: -18px;  
+    margin-right: 90px;
+    line-height: 1.4;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #424149;
+    
+}
+
+
+}
+
+@media only screen and (max-width:1100px) {
+	.slogan {
+    font: 40px BodoniMTBold, sans-serif;
+    
+    
+    margin-top: 50px;
+    
+}
+.sect3 {
+    margin-top: -50px;
+}
+
+.slogan_sect2 {
+    font: 32px segoeuibold, sans-serif;
+    color: #1f1f1f;
+    text-transform: uppercase;
+    padding-top: 10px;
+    line-height: 1;
+    margin-left: 20px;
+}
+
+.slogan_sect3 {
+    font: 32px segoeuibold, sans-serif;
+
+}
+
+.slogan_sect4 {
+    font: 32px segoeuibold, sans-serif;
+
+}
+
+.content_sect2 {
+    font: 18px "8201", sans-serif;
+    color: #464646;
+    margin-left: 80px;  
+    margin-top: -13px;  
+    margin-right: 90px;
+    line-height: 1.4;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #424149;
+    
+}
+.content_sect3 {
+    font: 18px "8201", sans-serif;
+    color: #464646;
+    margin-left: 80px;  
+    margin-top: -13px;  
+    margin-right: 90px;
+    line-height: 1.4;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #424149;
+    
+}
+
+.content_sect4 {
+    font: 18px "8201", sans-serif;
+    color: #464646;
+    margin-left: 80px;  
+    margin-top: -13px;  
+    margin-right: 90px;
+    line-height: 1.4;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #424149;
+    
+}
+
+.content {
+    font: 22px "6563", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: right;
+    margin-top: 50px;
+    margin-right: 33px;
+}
+
+.but2, .but3, .but4 {
+    margin-top: 10px;
+}
+
+.bg3, .bg2, .bg1 {
+    
+    height: 600px;
+}
+
+.bg4 {
+    height: 600px;
+}
+
+.sect4 {
+    margin-top: 10px;
+}
+
+.bg_form {
+    padding-top: 45px;
+    margin-top: 20px;
+    background-image: url(../images/bg_form.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding-bottom: 80px;
+    
+}
+
+}
+
+@media only screen and (max-width:991px) {
+	.inp1_2 {
+	   margin-top: 30px;
+	}
+    
+    .but_form {
+        text-align: center;
+    }
+    
+    .slogan_sect2 {
+    font: 30px segoeuibold, sans-serif;
+    color: #1f1f1f;
+    text-transform: uppercase;
+    padding-top: 1px;
+    line-height: 1;
+    margin-left: 20px;
+}
+
+.content_sect2 {
+    font: 18px "8201", sans-serif;
+    color: #464646;
+    margin-left: 80px;  
+    margin-top: -13px;  
+    margin-right: 20px;
+    line-height: 1.4;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #424149;
+    
+}
+
+.slogan_sect3 {
+    font: 30px segoeuibold, sans-serif;
+    color: #1f1f1f;
+    text-transform: uppercase;
+    padding-top: 1px;
+    line-height: 1;
+    margin-left: 20px;
+}
+
+.content_sect3 {
+    font: 18px "8201", sans-serif;
+    color: #464646;
+    margin-left: 80px;  
+    margin-top: -13px;  
+    margin-right: 20px;
+    line-height: 1.4;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #424149;
+    
+}
+
+
+.slogan_sect4 {
+    font: 30px segoeuibold, sans-serif;
+    color: #1f1f1f;
+    text-transform: uppercase;
+    padding-top: 1px;
+    line-height: 1;
+    margin-left: 20px;
+}
+
+.content_sect4 {
+    font: 18px "8201", sans-serif;
+    color: #464646;
+    margin-left: 80px;  
+    margin-top: -13px;  
+    margin-right: 20px;
+    line-height: 1.4;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #424149;
+    
+}
+
+.bg_form {
+    padding-top: 45px;
+    margin-top: 20px;
+    background-image: url(../images/bg_form.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding-bottom: 80px;
+    
+}
+
+.bg4 {
+    
+    height: 500px;
+}
+
+
+}
+
+@media only screen and (max-width:830px) {
+	.bg3, .bg2, .bg1, .bg4, .bg5 {
+    
+    height: 500px;
+}
+.but_form {
+    
+    margin-left: 0;
+
+}
+
+}
+
+@media only screen and (max-width:470px) {
+    
+    .slogan {
+    font: 20px BodoniMTBold, sans-serif;
+	
+    }
+.content_sect2 {
+    font: 22px "8201", sans-serif;
+    color: #464646;
+    margin-left: 80px;  
+    margin-top: -18px;  
+    margin-right: 1px;
+    line-height: 1.4;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #424149;
+    
+}
+
+.content {
+    font: 15px "6563", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: right;
+    margin-top: 30px;
+    margin-right: 33px;
+}
+
+.bg1 {
+    
+    height: 450px;
+}
+
+}
+
+@media only screen and (max-width:350px) {
+	.bg1, .bg2, .bg3, .bg4, .bg5 {
+    
+    height: 400px;
+}
+}
+
+
+

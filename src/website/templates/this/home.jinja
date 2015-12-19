@@ -1,178 +1,157 @@
 {% extends 'base.jinja' %}
 
-{% block ngcontroller %}ng-controller="HomeCtrl"{% endblock %}
-
-{% block js %}
-    {{ super() }}
-    <script src="{{ static('this/js/angularjs/controllers/homectrl.js') }}"></script>
-{% endblock %}
-
 {% block content %}
-
-    {# The ``Main`` page. #}
-    {% if pages.main %}
-        <div class="row display a">
-            <div class="col-md-6 left">
-                &nbsp;
-            </div>
-            <div class="col-md-6 right">
-                <span class="brand"></span>
-                <div style="clear:both;"></div>
-
-                <div class="slogan">
-                    {{ pages.main.title }}
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 bg1">
                 </div>
-                <div class="content">
-                    {{ pages.main.content }}
-                </div>
-
-                {% if pages.main.nav_is_active %}
-                    <div class="nav">
-                        <button
-                            class="classic"
-                            data-role="{{ pages.main.nav_role }}"
-                        >
-                            {{ pages.main.nav_title }}
-                        </button>
+                <div class="col-md-6 col-sm-6 bg2">
+                    <div class="logo">
+                        <img src="{{ static('this/images/logo.png') }}" />
                     </div>
-                {% endif %}
+                    <div style="clear:both;"></div>
+                    <div class="slogan">
+                        Devenir<br /> l'auteur de<br /> votre vie
+                    </div>
+                    <img class="line" src="{{ static('this/images/line.jpg') }}" />
+                    <div class="content">
+                        Droite la vie privee<br /> et familiale
+                    </div>
+                    <a href="#" class="btn btn-default but">
+                        live la suite...
+                    </a>
+                </div>
             </div>
         </div>
-    {% endif %}
-    {# /The ``Main`` page. #}
+    </section>
 
-    {# The ``Biography`` page. #}
-    <div class="row display b">
-        <div class="col-md-6 left">
-            <h1>
-                Brève biographie
-            </h1>
-            <article class="content">
-                Chaque personne de la façon dont vous avez besoin pour aller de
-                l'avant et n'a pas hésité à se prononcer sur un des facteurs
-                émotionnels et historiques de nos vies. Les actions que nous
-                effectuons doivent être humanitaire et consciemment en harmonie
-                avec sa personnalité. Et rappelez-vous, vous voulez lutter pour
-                le meilleur, et vous pouvez vivre honnêtement que possible et
-                propre à lui-même.
-            </article>
-            <div class="nav content">
-                <button class="classic">
-                    Live la suite...
-                </button>
-            </div>
-        </div>
-        <div class="col-md-6 right">
-            &nbsp;
-        </div>
-    </div>
-    {# /The ``Biography`` page. #}
-
-    {# The ``C`` page. #}
-    <div class="row display c">
-        <div class="col-md-6 left">
-            &nbsp;
-        </div>
-        <div class="col-md-6 right">
-            <h1>
-                Un résumé de la fondation
-            </h1>
-            <article class="content">
-                L'international de la Fondation "Vivre" prend la position du
-                point dans la vie sociale de notre société, dans laquelle vous
-                pouvez créer une dynamique basée sur le droit à la vie privée
-                et familiale sur la planète. Où que vous ne viviez pas avec le
-                développement de l'action sociale et économique.
-            </article>
-            <div class="nav content">
-                <button class="classic">
-                    Live la suite...
-                </button>
-            </div>
-        </div>
-    </div>
-    {# /The ``C`` page. #}
-
-    {# The ``D`` page. #}
-    <div class="row display b">
-        <div class="col-md-6 left">
-            <h1>
-                DioStim / Résumé du projet DioStim
-            </h1>
-            <article class="content">
-                DioStim doit d'abord le pouls de nos vies sur une base
-                quotidienne. Président, qui donne de la personnalité
-                obosnovatelnost et économiquement et techniquement organisé en
-                eux-mêmes le droit d'améliorer nos vies, qui est le droit à une
-                vie meilleure personnelle et familiale dans le monde entier.
-            </article>
-            <div class="nav content">
-                <button class="classic">
-                    Aller sur le site
-                </button>
-            </div>
-        </div>
-        <div class="col-md-6 right">
-            &nbsp;
-        </div>
-    </div>
-    {# /The ``D`` page. #}
-
-    {# The ``feedback`` page. #}
-    <form class="display feedback" method="post" action="{{ url('home') }}">
-        {% csrf_token %}
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1>Formulaire de commentaires</h1>
+    <section class="sect2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="slogan_sect2">
+                        Brève<br /> biographie
+                    </div>
+                    <img class="line2" src="{{ static('this/images/line2.jpg') }}"/>
+                    <div class="content_sect2">
                         <p>
-                            Formulaire de commentaires contact avec les
-                            representants de l'organisation.
+                            Chaque personne de la façon dont vous avez besoin pour aller de l'avant et n'a pas hésité à se prononcer sur un des facteurs émotionnels et historiques de nos vies. Les actions que nous effectuons doivent être humanitaire et consciemment en harmonie avec sa personnalité. Et rappelez-vous, vous voulez lutter pour le meilleur, et vous pouvez vivre honnêtement que possible et propre à lui-même.
                         </p>
                     </div>
+                    <a href="#" class="btn btn-default but2">
+                        live la suite...
+                    </a>
                 </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <input type="text" placeholder="Nom complet" name="full_name" />
-                        {{ form.full_name.errors }}
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" placeholder="Categorie" name="category" />
-                        {{ form.category.errors }}
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <input type="text" placeholder="Assujettir" name="subject" />
-                        {{ form.subject.errors }}
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <textarea placeholder="Un message" name="message"></textarea>
-                        {{ form.message.errors }}
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-                    </div>
-                    <div class="col-md-6" style="text-align:right;">
-                        <button class="classic" type="submit">
-                            A envoyer
-                        </button>
-                    </div>
-                </div>
-
+                <div class="col-md-6 col-sm-6 bg3"></div>
             </div>
         </div>
-    </form>
-    {# /The ``feedback`` page. #}
+    </section>
+
+    <section class="sect3">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 bg4"></div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="slogan_sect3">
+                        Un résumé<br /> de la fondation
+                    </div>
+                    <img class="line2_sect3" src="{{ static('this/images/line2.jpg') }}" />
+                    <div class="content_sect3">
+                        <p>
+                            L'international de la Fondation "Vivre" prend la position du point dans la vie sociale de notre société, dans laquelle vous pouvez créer une dynamique basée sur le droit à la vie privée et familiale sur la planète. Où que vous ne viviez pas avec le développement de l'action sociale et économique.
+                        </p>
+                    </div>
+                    <a href="#" class="btn btn-default but3">
+                        live la suite...
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sect4">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="slogan_sect4">
+                        DioStim / Résumé<br /> du projet DioStim
+                    </div>
+                    <img class="line2_sect4" src="{{ static('this/images/line2.jpg') }}" />
+                    <div class="content_sect4">
+                        <p>
+                            DioStim doit d'abord le pouls de nos vies sur une base quotidienne. Président, qui donne de la personnalité obosnovatelnost et économiquement et techniquement organisé en eux-mêmes le droit d'améliorer nos vies, qui est le droit à une vie meilleure personnelle et familiale dans le monde entier.
+                        </p>
+                    </div>
+                    <a href="#" class="btn btn-default but4">
+                        live la suite...
+                    </a>
+                </div>
+                <div class="col-md-6 col-sm-6 bg5"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg_form">
+        <div class="container-fluid text-center">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 form_inp">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="slogan_form">
+                                Formulaire<br /> de commentaires
+                            </div>
+                            <img class="line_form" src="{{ static('this/images/line_form.jpg') }}" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="content_form">
+                                <p>
+                                    Formulaire de commentaires contact avec les représentants de l'organisation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {# form #}
+                    <form method="post" action="{{ url('home') }}">
+                        <div class="row inp1">
+                            <div class="col-md-6">
+                                <input type="text" placeholder="Nom complet" name="full_name" />
+                            </div>
+                            <div class="col-md-6 inp1_2">
+                                <input type="text" placeholder="Catégorie" name="category" />
+                            </div>
+                        </div>
+                        <div class="row inp2">
+                            <div class="col-md-12">
+                                <input type="text" placeholder="Assujettir" name="subject" />
+                            </div>
+                        </div>
+                        <div class="row inp3">
+                            <div class="col-md-12">
+                                <textarea placeholder="Un message" name="message"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-12 captcha">
+                                {# <img src="{{ static('this/images/img_captcha.jpg') }}"/> #}
+                            </div>
+                            <div class="col-md-6 col-sm-6" class="">
+                                <button type="submit" class="btn btn-default but_form">
+                                    à envoyer
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    {# /form #}
+
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
 
