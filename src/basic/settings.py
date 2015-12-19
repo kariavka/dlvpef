@@ -120,6 +120,7 @@ TEMPLATES = [
                 ]],
             'filters': {
                 'defaults': 'jinja2extensions.filters.classic.defaults',
+                'nl2br': 'jinja2extensions.filters.classic.nl2br',
             },
             'autoescape': True,
             'auto_reload': DEBUG,

@@ -1,96 +1,124 @@
 {% extends 'base.jinja' %}
 
 {% block content %}
-    <section>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 col-sm-6 bg1">
-                </div>
-                <div class="col-md-6 col-sm-6 bg2">
-                    <div class="logo">
-                        <img src="{{ static('this/images/logo.png') }}" />
+    {% if not pages %}
+        <section>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12" style="text-align:center;margin-top:60px;font-size:3em;">
+                        {{ _('This site is temporarily has no information') }}!
                     </div>
-                    <div style="clear:both;"></div>
-                    <div class="slogan">
-                        Devenir<br /> l'auteur de<br /> votre vie
-                    </div>
-                    <img class="line" src="{{ static('this/images/line.jpg') }}" />
-                    <div class="content">
-                        Droite la vie privee<br /> et familiale
-                    </div>
-                    <a href="#" class="btn btn-default but">
-                        live la suite...
-                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    {% endif %}
 
-    <section class="sect2">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 col-sm-6">
-                    <div class="slogan_sect2">
-                        Brève<br /> biographie
+    {% if pages.main %}
+        <section>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 bg1">
                     </div>
-                    <img class="line2" src="{{ static('this/images/line2.jpg') }}"/>
-                    <div class="content_sect2">
-                        <p>
-                            Chaque personne de la façon dont vous avez besoin pour aller de l'avant et n'a pas hésité à se prononcer sur un des facteurs émotionnels et historiques de nos vies. Les actions que nous effectuons doivent être humanitaire et consciemment en harmonie avec sa personnalité. Et rappelez-vous, vous voulez lutter pour le meilleur, et vous pouvez vivre honnêtement que possible et propre à lui-même.
-                        </p>
+                    <div class="col-md-6 col-sm-6 bg2">
+                        <div class="logo">
+                            <img src="{{ static('this/images/logo.png') }}" />
+                        </div>
+                        <div style="clear:both;"></div>
+                        <div class="slogan">
+                            {{ pages.main.title|nl2br }}
+                        </div>
+                        <img class="line" src="{{ static('this/images/line.jpg') }}" />
+                        <div class="content">
+                            {{ pages.main.content|nl2br }}
+                        </div>
+                        {% if pages.main.nav_is_active %}
+                            <a href="{{ pages.main.nav_role }}" class="btn btn-default but">
+                                {{ pages.main.nav_title }}
+                            </a>
+                        {% endif %}
                     </div>
-                    <a href="#" class="btn btn-default but2">
-                        live la suite...
-                    </a>
                 </div>
-                <div class="col-md-6 col-sm-6 bg3"></div>
             </div>
-        </div>
-    </section>
+        </section>
+    {% endif %}
 
-    <section class="sect3">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 col-sm-6 bg4"></div>
-                <div class="col-md-6 col-sm-6">
-                    <div class="slogan_sect3">
-                        Un résumé<br /> de la fondation
+    {% if pages.biography %}
+        <section class="sect2">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="slogan_sect2">
+                            {{ pages.biography.title|nl2br }}
+                        </div>
+                        <img class="line2" src="{{ static('this/images/line2.jpg') }}"/>
+                        <div class="content_sect2">
+                            <p>
+                                {{ pages.biography.content|nl2br }}
+                            </p>
+                        </div>
+                        {% if pages.biography.nav_is_active %}
+                            <a href="{{ pages.biography.nav_role }}" class="btn btn-default but2">
+                                {{ pages.biography.nav_title }}
+                            </a>
+                        {% endif %}
                     </div>
-                    <img class="line2_sect3" src="{{ static('this/images/line2.jpg') }}" />
-                    <div class="content_sect3">
-                        <p>
-                            L'international de la Fondation "Vivre" prend la position du point dans la vie sociale de notre société, dans laquelle vous pouvez créer une dynamique basée sur le droit à la vie privée et familiale sur la planète. Où que vous ne viviez pas avec le développement de l'action sociale et économique.
-                        </p>
-                    </div>
-                    <a href="#" class="btn btn-default but3">
-                        live la suite...
-                    </a>
+                    <div class="col-md-6 col-sm-6 bg3"></div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    {% endif %}
 
-    <section class="sect4">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 col-sm-6">
-                    <div class="slogan_sect4">
-                        DioStim / Résumé<br /> du projet DioStim
+    {% if pages.information %}
+        <section class="sect3">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 bg4"></div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="slogan_sect3">
+                            {{ pages.information.title|nl2br }}
+                        </div>
+                        <img class="line2_sect3" src="{{ static('this/images/line2.jpg') }}" />
+                        <div class="content_sect3">
+                            <p>
+                                {{ pages.information.content|nl2br }}
+                            </p>
+                        </div>
+                        {% if pages.information.nav_is_active %}
+                            <a href="{{ pages.information.nav_role }}" class="btn btn-default but3">
+                                {{ pages.information.nav_title }}
+                            </a>
+                        {% endif %}
                     </div>
-                    <img class="line2_sect4" src="{{ static('this/images/line2.jpg') }}" />
-                    <div class="content_sect4">
-                        <p>
-                            DioStim doit d'abord le pouls de nos vies sur une base quotidienne. Président, qui donne de la personnalité obosnovatelnost et économiquement et techniquement organisé en eux-mêmes le droit d'améliorer nos vies, qui est le droit à une vie meilleure personnelle et familiale dans le monde entier.
-                        </p>
-                    </div>
-                    <a href="#" class="btn btn-default but4">
-                        live la suite...
-                    </a>
                 </div>
-                <div class="col-md-6 col-sm-6 bg5"></div>
             </div>
-        </div>
-    </section>
+        </section>
+    {% endif %}
+
+    {% if pages.about %}
+        <section class="sect4">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="slogan_sect4">
+                            {{ pages.about.title|nl2br }}
+                        </div>
+                        <img class="line2_sect4" src="{{ static('this/images/line2.jpg') }}" />
+                        <div class="content_sect4">
+                            <p>
+                                {{ pages.about.content|nl2br }}
+                            </p>
+                        </div>
+                        {% if pages.about.nav_is_active %}
+                            <a href="{{ pages.about.nav_role }}" class="btn btn-default but4">
+                                {{ pages.about.nav_title }}
+                            </a>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-6 col-sm-6 bg5"></div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
 
     <section class="bg_form">
         <div class="container-fluid text-center">

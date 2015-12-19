@@ -16,13 +16,13 @@ class Page(models.Model):
         max_length=16,
         unique=True,
         choices=ROLE_CHOICES,
-        default='a',
+        default='main',
         verbose_name=_('Role'),
         help_text=_('Page on the site.'),
     )
 
     title = models.CharField(
-        max_length=30,
+        max_length=256,
         verbose_name=_('Title'),
         help_text=_('On the main page, this field it is the slogan.'),
     )
@@ -35,13 +35,13 @@ class Page(models.Model):
     )
 
     nav_title = models.CharField(
-        max_length=30,
+        max_length=64,
         blank=True,
         verbose_name=_('Navigation title'),
         help_text=_('The text on the navigation button.'),
     )
     nav_role = models.CharField(
-        max_length=256,
+        max_length=512,
         blank=True,
         verbose_name=_('Navigation role'),
         help_text=_('Role of the navigation button - i.e., URL.'),
