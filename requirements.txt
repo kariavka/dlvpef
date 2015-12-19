@@ -1,6 +1,7 @@
 Django==1.8.7
 Jinja2==2.8
 MarkupSafe==0.23
+django-admin-tools==0.7.1
 django-jinja==2.0.0
 django-redis==4.3.0
 gunicorn==19.4.1

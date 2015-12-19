@@ -1,6 +1,12 @@
 
 ...
 
+pip3 install django-admin-tools
+./manage.py migrate audience
+./manage.py collectstatic --noinput
+
+...
+
 ./manage.py migrate audience
 
 ...
