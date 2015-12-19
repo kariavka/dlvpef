@@ -8,30 +8,40 @@
 {% endblock %}
 
 {% block content %}
-    {# The ``A`` page. #}
-    <div class="row display a">
-        <div class="col-md-6 left">
-            &nbsp;
-        </div>
-        <div class="col-md-6 right">
-            <span class="brand"></span>
-            <div style="clear:both;"></div>
-            <div class="slogan">
-                Devenir l'auteur de votre vie
-            </div>
-            <div class="content">
-                Droite la vie privee et familiale
-            </div>
-            <div class="nav">
-                <button class="classic">
-                    Live la suite...
-                </button>
-            </div>
-        </div>
-    </div>
-    {# /The ``A`` page. #}
 
-    {# The ``B`` page. #}
+    {# The ``Main`` page. #}
+    {% if pages.main %}
+        <div class="row display a">
+            <div class="col-md-6 left">
+                &nbsp;
+            </div>
+            <div class="col-md-6 right">
+                <span class="brand"></span>
+                <div style="clear:both;"></div>
+
+                <div class="slogan">
+                    {{ pages.main.title }}
+                </div>
+                <div class="content">
+                    {{ pages.main.content }}
+                </div>
+
+                {% if pages.main.nav_is_active %}
+                    <div class="nav">
+                        <button
+                            class="classic"
+                            data-role="{{ pages.main.nav_role }}"
+                        >
+                            {{ pages.main.nav_title }}
+                        </button>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+    {# /The ``Main`` page. #}
+
+    {# The ``Biography`` page. #}
     <div class="row display b">
         <div class="col-md-6 left">
             <h1>
@@ -56,7 +66,7 @@
             &nbsp;
         </div>
     </div>
-    {# /The ``B`` page. #}
+    {# /The ``Biography`` page. #}
 
     {# The ``C`` page. #}
     <div class="row display c">
