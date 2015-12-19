@@ -1,0 +1,8 @@
+.errorlist li {
+    list-style-type: none;
+    color: #ea5267;
+    font-size: .9em;
+    font-style: italic;
+    padding-left: 10px;
+}
+

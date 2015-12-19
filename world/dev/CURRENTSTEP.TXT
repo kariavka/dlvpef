@@ -1,4 +1,8 @@
 
+./manage.py collectstatic --noinput
+
+...
+
 ./manage.py migrate content
 ./manage.py collectstatic --noinput
 ./manage.py loaddata apps/content/fixtures/pages.json

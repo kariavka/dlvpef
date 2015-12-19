@@ -146,22 +146,27 @@
 
                     {# form #}
                     <form method="post" action="{{ url('home') }}">
+                        {% csrf_token %}
                         <div class="row inp1">
                             <div class="col-md-6">
                                 <input type="text" placeholder="Nom complet" name="full_name" />
+                                {{ form.full_name.errors }}
                             </div>
                             <div class="col-md-6 inp1_2">
                                 <input type="text" placeholder="Catégorie" name="category" />
+                                {{ form.category.errors }}
                             </div>
                         </div>
                         <div class="row inp2">
                             <div class="col-md-12">
                                 <input type="text" placeholder="Assujettir" name="subject" />
+                                {{ form.subject.errors }}
                             </div>
                         </div>
                         <div class="row inp3">
                             <div class="col-md-12">
                                 <textarea placeholder="Un message" name="message"></textarea>
+                                {{ form.message.errors }}
                             </div>
                         </div>
                         <div class="row">
