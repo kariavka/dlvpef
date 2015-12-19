@@ -196,6 +196,7 @@ SOLID_I18N_DEFAULT_PREFIX_REDIRECT = False
 # JINJA2DJANGO_TRANSLATED_URL_HEAD_PREFIX = False
 
 # Admin tools.
+ADMIN_TOOLS_INDEX_DASHBOARD = 'basic.admintools.CustomAdminDashboard'
 ADMIN_TOOLS_THEMING_CSS = 'admin/css/theming.css'
 
 
