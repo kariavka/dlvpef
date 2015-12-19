@@ -44,11 +44,13 @@ ALLOWED_HOSTS = []
 
 # Application definition
 INSTALLED_APPS = (
+    # Admin tool's apps.
     'admin_tools',
     'admin_tools.theming',
     'admin_tools.menu',
     'admin_tools.dashboard',
 
+    # Django apps.
     'django.contrib.auth',
     'django.contrib.admin',
     'django.contrib.contenttypes',
@@ -56,11 +58,13 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Custom apps.
     'jinja2extensions',
-
     'audience',
+    'content',
 )
 
+# PROJECT MIDDLEWARE.
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
 
@@ -126,7 +130,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
-        # 'APP_DIRS': True,
+        # 'APP_DIRS': True, # No use if used loaders!!!
         'OPTIONS': {
             'context_processors': [
                 'django.core.context_processors.request',
