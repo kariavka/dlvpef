@@ -195,6 +195,10 @@ SOLID_I18N_HANDLE_DEFAULT_PREFIX = False
 SOLID_I18N_DEFAULT_PREFIX_REDIRECT = False
 # JINJA2DJANGO_TRANSLATED_URL_HEAD_PREFIX = False
 
+# Admin tools.
+ADMIN_TOOLS_THEMING_CSS = 'admin/css/theming.css'
+
+
 # Loading extension parameters of standard configurations.
 # Used to load various options on the server and on your local computer.
 # ** If options are not loaded this point is ignored.

@@ -1,0 +1,44 @@
+#header {
+    /* background: url(../img/admin-tools.png) 0 0 repeat-x; */
+    background-color: #fbfbfb;
+    color: #2f2f2f;
+    border-bottom: 1px solid #f6e0e0;
+}
+
+#header #branding h1 {
+    margin: 5px;
+    padding: 0;
+    text-indent: -9999px;
+    background: transparent url("../img/logo.png") no-repeat;
+    height: 35px;
+    width: 80px;
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%;
+}
+
+#bookmark-form {
+    clear: both;
+}
+
+#header #user-tools a {
+    color: #9d2929;
+}
+
+#navigation-menu {
+    border-top: 1px solid #f6e0e0;
+}
+
+div.breadcrumbs {
+    display: block;
+    padding: 10px 15px;
+    border: 0;
+    background-position: 0 -8px;
+    border-bottom: 1px solid #ededed;
+}
+
+div.breadcrumbs a {
+    display: inline;
+}
+
