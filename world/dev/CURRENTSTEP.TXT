@@ -1,4 +1,8 @@
 
+./manage.py migrate content
+./manage.py collectstatic --noinput
+./manage.py loaddata apps/content/fixtures/pages.json
+
 ...
 
 pip3 install django-admin-tools
