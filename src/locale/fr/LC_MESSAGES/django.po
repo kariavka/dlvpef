@@ -1,0 +1,199 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-21 00:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: apps/audience/admin.py:32
+msgid "Subscriber data"
+msgstr ""
+
+#: apps/audience/forms.py:41
+msgid "Timestamp"
+msgstr ""
+
+#: apps/audience/forms.py:43 apps/audience/models.py:48
+msgid "Category"
+msgstr ""
+
+#: apps/audience/models.py:16 apps/audience/models.py:44
+msgid "Full name"
+msgstr ""
+
+#: apps/audience/models.py:17
+msgid "The man's name for identification (not required)."
+msgstr ""
+
+#: apps/audience/models.py:22
+msgid "E-mail"
+msgstr ""
+
+#: apps/audience/models.py:26 apps/content/models.py:34
+msgid "Active"
+msgstr ""
+
+#: apps/audience/models.py:31
+msgid "subscriber"
+msgstr ""
+
+#: apps/audience/models.py:32
+msgid "Subscribers"
+msgstr ""
+
+#: apps/audience/models.py:52
+msgid "Subject"
+msgstr ""
+
+#: apps/audience/models.py:55
+msgid "Message"
+msgstr ""
+
+#: apps/audience/models.py:61
+msgid "Date stamp"
+msgstr ""
+
+#: apps/audience/models.py:67
+msgid "message"
+msgstr ""
+
+#: apps/audience/models.py:68
+msgid "Messages"
+msgstr ""
+
+#: apps/content/admin.py:25
+msgid "Navigation"
+msgstr ""
+
+#: apps/content/admin.py:38 apps/content/models.py:20
+msgid "Role"
+msgstr ""
+
+#: apps/content/admin.py:45
+msgid "Page data"
+msgstr ""
+
+#: apps/content/admin.py:64
+msgid "Delete selected entries"
+msgstr ""
+
+#: apps/content/admin.py:72
+msgid "Activate selected entries"
+msgstr ""
+
+#: apps/content/admin.py:80
+msgid "Deactivate selected entries"
+msgstr ""
+
+#: apps/content/models.py:10
+msgid "Main page"
+msgstr ""
+
+#: apps/content/models.py:11
+msgid "Biography page"
+msgstr ""
+
+#: apps/content/models.py:12
+msgid "Information page"
+msgstr ""
+
+#: apps/content/models.py:13
+msgid "About page"
+msgstr ""
+
+#: apps/content/models.py:21
+msgid "Page on the site."
+msgstr ""
+
+#: apps/content/models.py:26
+msgid "Title"
+msgstr ""
+
+#: apps/content/models.py:27
+msgid "On the main page, this field it is the slogan."
+msgstr ""
+
+#: apps/content/models.py:30
+msgid "Content"
+msgstr ""
+
+#: apps/content/models.py:40
+msgid "Navigation title"
+msgstr ""
+
+#: apps/content/models.py:41
+msgid "The text on the navigation button."
+msgstr ""
+
+#: apps/content/models.py:46
+msgid "Navigation role"
+msgstr ""
+
+#: apps/content/models.py:47
+msgid "Role of the navigation button - i.e., URL."
+msgstr ""
+
+#: apps/content/models.py:51
+msgid "Active navigation button"
+msgstr ""
+
+#: apps/content/models.py:57
+msgid "page"
+msgstr ""
+
+#: apps/content/models.py:58
+msgid "Pages"
+msgstr ""
+
+#: apps/jinja2extensions/apps/config.py:8
+msgid "Jinja2Extensions"
+msgstr ""
+
+#: basic/admintools.py:14
+msgid "Site manager"
+msgstr ""
+
+#: basic/admintools.py:19
+msgid "Feddabck"
+msgstr ""
+
+#: basic/admintools.py:23
+msgid "Site content"
+msgstr ""
+
+#: basic/admintools.py:31
+msgid "Administration"
+msgstr ""
+
+#: basic/admintools.py:36
+msgid "Users and Groups"
+msgstr ""
+
+#: basic/admintools.py:41
+msgid "Sites"
+msgstr ""
+
+#: basic/admintools.py:49
+msgid "Recent Actions"
+msgstr ""
+
+#: basic/settings.py:185
+msgid "English"
+msgstr ""
+
+#: basic/settings.py:186
+msgid "France"
+msgstr ""
