@@ -42,6 +42,18 @@ SECRET_KEY = '*b&^27kgh15^@2jw-e9ds5uvvf!6+9elpvb3)rpl^&5y*s-ht-'
 DEBUG = True
 ALLOWED_HOSTS = []
 
+# SESSIONS
+# use File System:
+SESSION_ENGINE = 'django.contrib.sessions.backends.file'
+SESSION_FILE_PATH = os.path.join(BASE_DIR_UP, 'world','var','sys','sessions')
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
+
+# use Redis:
+### SESSION_SERIALIZER='django.contrib.sessions.serializers.PickleSerializer'
+### SESSION_ENGINE = 'redis_sessions.session'
+### SESSION_REDIS_HOST = 'localhost'
+### SESSION_REDIS_PORT = 6379
+
 # Application definition
 INSTALLED_APPS = (
     # Admin tool's apps.

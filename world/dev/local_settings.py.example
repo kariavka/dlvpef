@@ -3,18 +3,24 @@ DEBUG = False
 ALLOWED_HOSTS = ['dlvpef.org', 'localhost', '127.0.0.1', ]
 
 
+# SESSIONS
+SESSION_SERIALIZER='django.contrib.sessions.serializers.PickleSerializer'
+SESSION_ENGINE = 'redis_sessions.session'
+SESSION_REDIS_HOST = 'localhost'
+SESSION_REDIS_PORT = 6379
+
+
 # DATABASE
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'HOST': 'localhost',
         'NAME': 'dlvpef',
         'USER': '<USER>',
         'PASSWORD': '<PASSWORD>',
     }
 }
-
-
 
 # SECRET_KEY
 # ** You must change this value - this is important! Do not save the security

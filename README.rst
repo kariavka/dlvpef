@@ -58,7 +58,15 @@ Create local django settings in `/some/path/to/projects/dlvpef/world/etc/local_s
     DEBUG = False
     ALLOWED_HOSTS = ['dlvpef.org', 'localhost', '127.0.0.1', ]
 
+    # SESSIONS
+    # ** Optional.
+    SESSION_SERIALIZER='django.contrib.sessions.serializers.PickleSerializer'
+    SESSION_ENGINE = 'redis_sessions.session'
+    SESSION_REDIS_HOST = 'localhost'
+    SESSION_REDIS_PORT = 6379
+
     # DATABASE
+    # ** Optional (you can use sqlite).
     # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
     DATABASES = {
         'default': {

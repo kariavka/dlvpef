@@ -4,6 +4,7 @@ MarkupSafe==0.23
 django-admin-tools==0.7.1
 django-jinja==2.0.0
 django-redis==4.3.0
+django-redis-sessions==0.5.0
 gunicorn==19.4.1
 psycopg2==2.6.1
 redis==2.10.5
