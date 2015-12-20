@@ -63,6 +63,7 @@ Create local django settings in `/some/path/to/projects/dlvpef/world/etc/local_s
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'HOST': 'localhost',
             'NAME': 'dlvpef',
             'USER': '<USER>',
             'PASSWORD': '<PASSWORD>',
