@@ -2,46 +2,43 @@
     font-family: 'BodoniMTBold';
     src: url('../fonts/BodoniMTBold.eot');
     src: url('../fonts/BodoniMTBold.eot') format('embedded-opentype'),
-         url('../fonts/BodoniMTBold.woff2') format('woff2'),
-         url('../fonts/BodoniMTBold.woff') format('woff'),
-         url('../fonts/BodoniMTBold.ttf') format('truetype'),
-         url('../fonts/BodoniMTBold.svg#BodoniMTBold') format('svg');
+    url('../fonts/BodoniMTBold.woff2') format('woff2'),
+    url('../fonts/BodoniMTBold.woff') format('woff'),
+    url('../fonts/BodoniMTBold.ttf') format('truetype'),
+    url('../fonts/BodoniMTBold.svg#BodoniMTBold') format('svg');
 }
-
 
 @font-face {
     font-family: '6563';
     src: url('../fonts/6563.eot');
     src: url('../fonts/6563.eot') format('embedded-opentype'),
-         url('../fonts/6563.woff2') format('woff2'),
-         url('../fonts/6563.woff') format('woff'),
-         url('../fonts/6563.ttf') format('truetype'),
-         url('../fonts/6563.svg#6563') format('svg');
+    url('../fonts/6563.woff2') format('woff2'),
+    url('../fonts/6563.woff') format('woff'),
+    url('../fonts/6563.ttf') format('truetype'),
+    url('../fonts/6563.svg#6563') format('svg');
 }
 
 @font-face {
     font-family: '8201';
     src: url('../fonts/8201.eot');
     src: url('../fonts/8201.eot') format('embedded-opentype'),
-         url('../fonts/8201.woff2') format('woff2'),
-         url('../fonts/8201.woff') format('woff'),
-         url('../fonts/8201.ttf') format('truetype'),
-         url('../fonts/8201.svg#8201') format('svg');
+    url('../fonts/8201.woff2') format('woff2'),
+    url('../fonts/8201.woff') format('woff'),
+    url('../fonts/8201.ttf') format('truetype'),
+    url('../fonts/8201.svg#8201') format('svg');
 }
 
 @font-face {
-        font-family: segoeuibold; /* Гарнитура шрифта */
-        src: url(../fonts/segoeuibold.ttf); /* Путь к файлу со шрифтом */
-        }   
- 
+    font-family: segoeuibold; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
+    src: url(../fonts/segoeuibold.ttf); /* пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+}
 
 .bg1 {
     background-image: url(../images/bg1.jpg);
     background-repeat: no-repeat;
     background-size: 100% auto;
     height: 700px;
-    
-    
+
 }
 
 .bg2 {
@@ -49,7 +46,7 @@
     background-repeat: no-repeat;
     background-size: 100% auto;
     height: 700px;
-    
+
 }
 
 .logo {
@@ -100,7 +97,7 @@ a.but:hover {
 
 .sect2 {
     margin-top: 40px;
-    
+
 }
 
 .slogan_sect2 {
@@ -120,16 +117,14 @@ a.but:hover {
 .content_sect2 {
     font: 22px "8201", sans-serif;
     color: #464646;
-    margin-left: 80px;  
-    margin-top: -22px;  
+    margin-left: 80px;
+    margin-top: -22px;
     margin-right: 90px;
     line-height: 1.7;
     padding-bottom: 35px;
     border-bottom: 1px solid #424149;
-    
+
 }
-
-
 
 .but2 {
     border-radius: 0;
@@ -155,8 +150,6 @@ a.but2:hover {
     height: 700px;
 }
 
-
-
 .sect3 {
     margin-top: 80px;
 }
@@ -178,13 +171,13 @@ a.but2:hover {
 .content_sect3 {
     font: 22px "8201", sans-serif;
     color: #464646;
-    margin-left: 80px;  
-    margin-top: -22px;  
+    margin-left: 80px;
+    margin-top: -22px;
     margin-right: 90px;
     line-height: 1.7;
     padding-bottom: 35px;
     border-bottom: 1px solid #424149;
-    
+
 }
 
 .but3 {
@@ -208,8 +201,6 @@ a.but3:hover {
     margin-top: 80px;
 }
 
-
-
 .slogan_sect4 {
     font: 48px segoeuibold, sans-serif;
     color: #1f1f1f;
@@ -227,16 +218,14 @@ a.but3:hover {
 .content_sect4 {
     font: 22px "8201", sans-serif;
     color: #464646;
-    margin-left: 80px;  
-    margin-top: -22px;  
+    margin-left: 80px;
+    margin-top: -22px;
     margin-right: 90px;
     line-height: 1.7;
     padding-bottom: 35px;
     border-bottom: 1px solid #424149;
-    
+
 }
-
-
 
 .but4 {
     border-radius: 0;
@@ -276,16 +265,16 @@ a.but4:hover {
     background-repeat: no-repeat;
     background-size: 100% auto;
     padding-bottom: 80px;
-    
+
 }
 
-.slogan_form  {
+.slogan_form {
     font: 36px segoeuibold, sans-serif;
     color: #1f1f1f;
     text-transform: uppercase;
     padding-bottom: 10px;
     line-height: 1.2;
-    
+
 }
 
 .content_form {
@@ -293,7 +282,7 @@ a.but4:hover {
     color: #464646;
     line-height: 1.5;
     padding-top: 10px;
-    }
+}
 
 .form_inp input, textarea {
     padding: 10px 0 10px 15px;
@@ -308,14 +297,13 @@ a.but4:hover {
     margin-top: 15px;
 }
 
-
 .inp2 {
- margin-top: 30px;
+    margin-top: 30px;
 }
 
 .inp3 {
     margin-top: 30px;
-    
+
 }
 
 .inp3 textarea {
@@ -338,23 +326,26 @@ a.but4:hover {
 }
 
 footer {
-    height: 67px;
+    min-height: 67px;
     background-color: #F1F1F1;
-}
-
-.foot {
-    position: relative;
 }
 
 .copy {
     padding-top: 25px;
-        color: #9F9F9F;
+    color: #9F9F9F;
 }
-.cons {
-    
-    position: absolute;  
-    right: 127px; 
-    top: 15px; 
+
+@media (min-width: 480px) {
+    .foot {
+        position: relative;
+    }
+
+    .cons {
+
+        position: absolute;
+        right: 127px;
+        top: 15px;
+    }
 }
 
 .cons, .inf {
@@ -362,7 +353,7 @@ footer {
     color: #a2a2a2;
 }
 
-a.inf:hover  {
+a.inf:hover {
     color: #db7281;
     text-decoration: none;
 }

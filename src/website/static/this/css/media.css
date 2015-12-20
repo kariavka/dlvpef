@@ -243,6 +243,13 @@
 
 }
 
+@media only screen and (max-width: 768px){
+    .text-block-pd-20-xs{
+        padding-top:20px;
+        padding-bottom:20px;
+    }
+}
+
 @media only screen and (max-width:470px) {
     
     .slogan {
