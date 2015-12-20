@@ -4,12 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DLVPEF</title>
+    <title>{% block title %}DLVPEF{% endblock %}</title>
 
     <link rel="stylesheet" href="{{ static('lib/bootstrap/3.3.6/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ static('this/css/style.css') }}" />
     <link rel="stylesheet" href="{{ static('this/css/media.css') }}" />
     <link rel="stylesheet" href="{{ static('this/css/expansions.css') }}" />
+
+    {% block css %}{% endblock %}
 </head>
 <body>
     {% block content %}{% endblock %}

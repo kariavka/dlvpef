@@ -1,0 +1,38 @@
+
+html,
+body,
+.container-table {
+    height: 100%;
+}
+
+body {
+    background: url(../images/handlers-background.png) no-repeat;
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%;
+}
+
+.container-table {
+    display: table;
+}
+
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.message h1 {
+    font-size: 5em;
+}
+
+.message p {
+    font-size:  3em;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #d2d2d2;
+}

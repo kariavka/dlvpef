@@ -1,0 +1,19 @@
+{% extends 'base.jinja' %}
+
+{% block title %}{{ super() }}: {{ _('Server Error') }}{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ static('this/css/handlers.css') }}" />
+{% endblock %}
+
+{% block content %}
+    <div class="container container-table">
+        <div class="row vertical-center-row">
+            <div class="text-center col-md-8 col-md-offset-2 message">
+                <h1>{{ _('Error 500') }}</h1>
+                <p>{{_('We already know about this error and fix it soon') }}!</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
