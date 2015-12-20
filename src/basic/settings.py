@@ -96,7 +96,7 @@ TEMPLATES = [
         'OPTIONS': {
             # Match the template names ending in .html but not the ones in the
             # admin folder.
-            'match_extension': '.jinja',
+            'match_extension': ('.jinja', '.txt'),
             'match_regex': r'^(?!admin/).*',
             'app_dirname': 'templates',
 

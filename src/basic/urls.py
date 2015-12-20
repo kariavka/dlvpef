@@ -19,6 +19,8 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf.urls.static import static
 
+from django.views.generic import TemplateView
+
 from solid_i18n.urls import solid_i18n_patterns
 
 from basic import views
@@ -37,6 +39,10 @@ urlpatterns += [
 # urlpatterns += i18n_patterns('',
 urlpatterns += solid_i18n_patterns('',
     url(r'^$', views.HomeView.as_view(), name='home'),
+
+    # System pages.
+    url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt',
+        content_type='text/plain')),
 )
 
 # Static files.
