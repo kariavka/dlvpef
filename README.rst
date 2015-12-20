@@ -12,13 +12,17 @@ Droite la Vie Privée et Familiale (DLVPEF)
 
 -------
 
+.. attention::
+
+    To work needed python 3.4 or higher!
+
 
 Quick start guide
 -----------------
 
 Clone.
-+++++
-+
+++++++
+
 .. code-block::
 
     $ git  clone git@github.com:kariavka/dlvpef.git
