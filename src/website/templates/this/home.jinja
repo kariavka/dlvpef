@@ -1,5 +1,31 @@
 {% extends 'base.jinja' %}
 
+{% block js %}
+    {{ super() }}
+    <script src="{{ static('lib/angularjs/1.4.8/angular.min.js') }}"></script>
+    <script src="{{ static('this/js/angularjs/app.js') }}"></script>
+    <script src="{{ static('this/js/angularjs/validators/charfield.js') }}"></script>
+    <script src="{{ static('this/js/angularjs/controllers/feedbackctrl.js') }}"></script>
+
+    {# If the form with errors - scroll to the form. #}
+    {% if form.errors %}
+        <script>
+        (function($) {$(document).ready(function() {
+            var eltop = $("#feedback").offset().top;
+            $("html, body").animate({scrollTop:eltop}, 1500, 'swing');
+        })})(jQuery);
+        </script>
+    {% endif %}
+
+{% endblock %}
+
+{% block css %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ static('this/css/angularjs.css') }}" />
+{% endblock %}
+
+{% block angularjsdata %}ng-app="appDlvpef"{% endblock %}
+
 {% block content %}
     {% if not pages %}
         <section>
@@ -120,7 +146,7 @@
         </section>
     {% endif %}
 
-    <section class="bg_form">
+    <section class="bg_form" ng-controller="FeedbackCtrl" ng-cloak id="feedback">
         <div class="container-fluid text-center">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 form_inp">
@@ -145,36 +171,108 @@
                     </div>
 
                     {# form #}
-                    <form method="post" action="{{ url('home') }}">
+                    <form id="feedback-form" method="post" action="{{ url('home') }}">
                         {% csrf_token %}
                         <div class="row inp1">
+                            {# full name #}
                             <div class="col-md-6">
-                                <input type="text" placeholder="Nom complet" name="full_name" />
-                                {{ form.full_name.errors }}
+
+                                <input
+                                    type="text"
+                                    placeholder="Nom complet"
+                                    name="full_name"
+                                    ng-model="full_name.model"
+                                    ng-init="full_name.setOptions({init:'{{ form.full_name.value()|defaults('default') }}'})"
+                                />
+
+                                <ul class="errorlist">
+                                    <li ng-show="full_name.isValidError()">{{ _('It is invalid full name!') }}</li>
+                                    <li ng-show="full_name.isRequiredError()">{{ _('This field is required!') }}</li>
+                                    {% for error in form.full_name.errors %}
+                                        <li>{{ error }}</li>
+                                    {% endfor %}
+                                </ul>
+
                             </div>
+                            {# /full name #}
+
+                            {# category #}
                             <div class="col-md-6 inp1_2">
-                                <input type="text" placeholder="Catégorie" name="category" />
-                                {{ form.category.errors }}
+
+                                <input
+                                    type="text"
+                                    placeholder="Catégorie"
+                                    name="category"
+                                    ng-model="category.model"
+                                    ng-init="category.setOptions({init:'{{ form.category.value()|defaults('default') }}'})"
+                                />
+
+                                <ul class="errorlist">
+                                    <li ng-show="category.isValidError()">{{ _('It is invalid category!') }}</li>
+                                    <li ng-show="category.isRequiredError()">{{ _('This field is required!') }}</li>
+                                    {% for error in form.category.errors %}
+                                        <li>{{ error }}</li>
+                                    {% endfor %}
+                                </ul>
+
                             </div>
+                            {# /category #}
                         </div>
                         <div class="row inp2">
+                            {# subject #}
                             <div class="col-md-12">
-                                <input type="text" placeholder="Assujettir" name="subject" />
-                                {{ form.subject.errors }}
+
+                                <input
+                                    type="text"
+                                    placeholder="Assujettir"
+                                    name="subject"
+                                    ng-model="subject.model"
+                                    ng-init="subject.setOptions({init:'{{ form.subject.value()|defaults('default') }}'})"
+                                />
+
+                                <ul class="errorlist">
+                                    <li ng-show="subject.isValidError()">{{ _('It is invalid subject!') }}</li>
+                                    <li ng-show="subject.isRequiredError()">{{ _('This field is required!') }}</li>
+                                    {% for error in form.subject.errors %}
+                                        <li>{{ error }}</li>
+                                    {% endfor %}
+                                </ul>
+
                             </div>
+                            {# /subject #}
                         </div>
                         <div class="row inp3">
+                            {# message #}
                             <div class="col-md-12">
-                                <textarea placeholder="Un message" name="message"></textarea>
-                                {{ form.message.errors }}
+
+                                <textarea
+                                    placeholder="Un message"
+                                    name="message"
+                                    ng-model="message.model"
+                                    ng-init="message.setOptions({init:'{{ form.message.value()|defaults('default') }}'})"
+                                ></textarea>
+
+                                <ul class="errorlist">
+                                    <li ng-show="message.isValidError()">{{ _('It is invalid message!') }}</li>
+                                    <li ng-show="message.isRequiredError()">{{ _('This field is required!') }}</li>
+                                    {% for error in form.message.errors %}
+                                        <li>{{ error }}</li>
+                                    {% endfor %}
+                                </ul>
+
                             </div>
+                            {# /message #}
                         </div>
                         <div class="row">
                             <div class="col-md-4 col-sm-12 captcha">
                                 {# <img src="{{ static('this/images/img_captcha.jpg') }}"/> #}
                             </div>
-                            <div class="col-md-6 col-sm-6" class="">
-                                <button type="submit" class="btn btn-default but_form">
+                            <div class="col-md-6 col-sm-6">
+                                <button
+                                    type="submit"
+                                    class="btn btn-default but_form"
+                                    ng-disabled="formIsNotValid()"
+                                >
                                     à envoyer
                                 </button>
                             </div>
