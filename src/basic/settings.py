@@ -70,6 +70,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # External apps.
+    'captcha',
+
     # Custom apps.
     'jinja2extensions',
     'audience',
@@ -211,6 +214,12 @@ SOLID_I18N_DEFAULT_PREFIX_REDIRECT = False
 ADMIN_TOOLS_INDEX_DASHBOARD = 'basic.admintools.CustomAdminDashboard'
 ADMIN_TOOLS_THEMING_CSS = 'admin/css/theming.css'
 
+
+# Recaptcha.
+# Add sites: dlvpef.org, weltwolke.com, 127.0.0.1, localhost
+RECAPTCHA_PUBLIC_KEY = '6LcYiRMTAAAAAGTQiXgASzyl4Ait3u6-DqgZCQk8'
+RECAPTCHA_PRIVATE_KEY = '6LcYiRMTAAAAAMYLRoxysBjxmPg3FPSlUWrRekHM'
+NOCAPTCHA = True
 
 # Loading extension parameters of standard configurations.
 # Used to load various options on the server and on your local computer.

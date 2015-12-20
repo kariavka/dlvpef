@@ -7,11 +7,15 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 
+from captcha.fields import ReCaptchaField
+
 from audience.models import Feedback, Subscriber
 
 
 class FeedbackForm(forms.ModelForm):
     """Feedback form."""
+    captcha = ReCaptchaField()
+
     class Meta:
         model = Feedback
         exclude = ('timestamp', )

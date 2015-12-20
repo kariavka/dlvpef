@@ -264,10 +264,11 @@
                             {# /message #}
                         </div>
                         <div class="row">
-                            <div class="col-md-4 col-sm-12 captcha">
-                                {# <img src="{{ static('this/images/img_captcha.jpg') }}"/> #}
+                            <div class="col-md-6 col-sm-12 captcha">
+                                {{ form.captcha }}
+                                {{ form.captcha.errors }}
                             </div>
-                            <div class="col-md-6 col-sm-6">
+                            <div class="col-md-6 col-sm-12 text-left">
                                 <button
                                     type="submit"
                                     class="btn btn-default but_form"
