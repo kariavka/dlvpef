@@ -335,6 +335,16 @@ footer {
     color: #9F9F9F;
 }
 
+.cons, .inf {
+    font: 14px "8201", sans-serif;
+    color: #a2a2a2;
+}
+
+a.inf:hover {
+    color: #db7281;
+    text-decoration: none;
+}
+
 @media (min-width: 480px) {
     .foot {
         position: relative;
@@ -346,21 +356,13 @@ footer {
         right: 127px;
         top: 15px;
     }
+
+    .liv {
+        position: absolute;
+        right: 1px;
+        top: 15px;
+    }
+
 }
 
-.cons, .inf {
-    font: 14px "8201", sans-serif;
-    color: #a2a2a2;
-}
-
-a.inf:hover {
-    color: #db7281;
-    text-decoration: none;
-}
-
-.liv {
-    position: absolute;
-    right: 1px;
-    top: 15px;
-}
 
