@@ -29,15 +29,15 @@ class FeedbackForm(forms.ModelForm):
         # Send notification to subscribers.
         if subscribers:
             # Title of message.
-            message_title = '{}, {}'.format(
+            message_title = u'{}, {}'.format(
                 data.get('full_name'),
                 data.get('subject'),
             )
 
             # Message body.
-            message_content = ('{timestamp_msg}: {timestamp}\n'
-                '{category_msg}: {category}\n'
-                '{message}').format(
+            message_content = (u'{timestamp_msg}: {timestamp}\n'
+                u'{category_msg}: {category}\n'
+                u'{message}').format(
                     timestamp_msg=_('Timestamp'),
                     timestamp=timezone.datetime.now(),
                     category_msg=_('Category'),

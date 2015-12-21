@@ -31,7 +31,17 @@ Clone.
 Install virtualenv.
 ++++++++++++++++++++
 
-*P.s. Used python 3.4*
+Python 2.7
+==========
+
+.. code-block::
+
+    $ virtualenv --no-site-packages -p/usr/bin/python2.7 venv
+    $ source venv/bin/activate
+    (venv)$
+
+Python 3.4
+==========
 
 .. code-block::
 
@@ -39,8 +49,19 @@ Install virtualenv.
     $ source venv/bin/activate
     (venv)$
 
+
 Install packages.
 +++++++++++++++++
+
+Python 2.7
+==========
+
+.. code-block::
+
+    (venv)$ pip install -r requirements.txt
+
+Python 3.4
+==========
 
 .. code-block::
 

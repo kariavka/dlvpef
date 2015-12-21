@@ -30,7 +30,7 @@ class PageAdmin(admin.ModelAdmin):
 
     def get_page_data(self, obj):
         """Return page data."""
-        return """
+        return u"""
             <strong>{}</strong>: <em>{}</em><br/><br/>
             <span style="text-transform: uppercase;">{}</span>
             <p>{} ... </p>

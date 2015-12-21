@@ -7,6 +7,7 @@
 .idea/*
 venv/*
 !\.d
+.env/*
 
 world/etc/local_settings.sh
 world/etc/local_settings.py

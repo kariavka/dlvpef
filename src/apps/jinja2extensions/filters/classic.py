@@ -2,6 +2,7 @@
 templates in Django applications.
 
 """
+import sys
 import re
 from jinja2 import Markup, escape
 
@@ -25,7 +26,7 @@ def nl2br(value, markup=False):
     if not markup:
         value = escape(value)
 
-    result = str(value)
+    result = unicode(value) if sys.version_info.major == 2 else str(value)
     for marker in ('\\n', '\n'):
         result = result.replace(marker, '<br/ >')
 
