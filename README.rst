@@ -32,7 +32,7 @@ Install virtualenv.
 ++++++++++++++++++++
 
 Python 2.7
-==========
+----------
 
 .. code-block::
 
@@ -40,8 +40,9 @@ Python 2.7
     $ source venv/bin/activate
     (venv)$
 
+
 Python 3.4
-==========
+----------
 
 .. code-block::
 
@@ -54,14 +55,15 @@ Install packages.
 +++++++++++++++++
 
 Python 2.7
-==========
+----------
 
 .. code-block::
 
     (venv)$ pip install -r requirements.txt
 
+
 Python 3.4
-==========
+----------
 
 .. code-block::
 
