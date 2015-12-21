@@ -146,6 +146,8 @@ In order to quickly create website's pages, you need to install the pages fixtur
     /some/path/to/projects/dlvpef
     (venv)$ cd src/
     (venv)$ ./manage.py loaddata apps/content/fixtures/pages.json
+    (venv)$ ./manage.py loaddata apps/content/fixtures/informations.json
+
 
 Run.
 ++++

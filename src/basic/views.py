@@ -3,7 +3,7 @@ from django.views.generic import FormView
 from django.core.urlresolvers import reverse_lazy
 
 from audience.forms import FeedbackForm
-from content.models import Page
+from content.models import Page, Information
 
 
 class HomeView(FormView):
@@ -19,6 +19,8 @@ class HomeView(FormView):
         query = Q(is_active=True)
         pages = Page.objects.filter(query)
         context['pages'] = {obj.role:obj for obj in pages}
+        context['information'] = Information.objects.last()
+
         return context
 
     def form_valid(self, form):
