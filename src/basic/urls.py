@@ -27,7 +27,7 @@ from basic import handlers
 
 
 handler404 = handlers.PageNotFoundHandler.as_view()
-handler404 = handlers.ServerErrorHandler.as_view()
+handler500 = handlers.ServerErrorHandler.as_view()
 
 
 # Localization URLS.
