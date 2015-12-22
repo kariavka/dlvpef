@@ -11,3 +11,4 @@ psycopg2==2.6.1
 redis==2.10.5
 solid-i18n==1.1.1
 sorl-thumbnail==12.3
+mysql-python==1.2.5
