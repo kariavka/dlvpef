@@ -3,6 +3,11 @@
 *.swp
 *.core
 
+src/basic/server_settings.py
+src/basic/_server_settings.py
+src/basic/del.server_settings.py
+src/basic/server_settings.py.del
+
 *\.del*
 .idea/*
 venv/*

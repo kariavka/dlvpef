@@ -12,27 +12,38 @@ Droite la Vie Privée et Familiale (DLVPEF)
 
 -------
 
-.. attention::
+Agreement
+=========
 
-    To work needed python 3.4 or higher!
+- The `(venv)$` identifier of command line is indicates that there must be active virtual environment.
 
+- In this manual path to the project, for example: `/full/path/to/the/dlvpef/` - it will be designated as `$BASE_DIR`.
+
+
+Attention
+=========
+
+- Puthon support: `2.7`, `3.4` or higher!
+
+-------
 
 Quick start guide
------------------
++++++++++++++++++
 
-Clone.
-++++++
+Clone
+-----
 
 .. code-block::
 
     $ git  clone git@github.com:kariavka/dlvpef.git
     $ cd dlvpef
 
-Install virtualenv.
-++++++++++++++++++++
+
+Install virtualenv
+------------------
 
 Python 2.7
-----------
+~~~~~~~~~~
 
 .. code-block::
 
@@ -42,7 +53,7 @@ Python 2.7
 
 
 Python 3.4
-----------
+~~~~~~~~~~
 
 .. code-block::
 
@@ -51,11 +62,11 @@ Python 3.4
     (venv)$
 
 
-Install packages.
-+++++++++++++++++
+Install packages
+----------------
 
 Python 2.7
-----------
+~~~~~~~~~~
 
 .. code-block::
 
@@ -63,17 +74,30 @@ Python 2.7
 
 
 Python 3.4
-----------
+~~~~~~~~~~
 
 .. code-block::
 
     (venv)$ pip3 install -r requirements.txt
 
 
-Local settings.
+Server settings
 +++++++++++++++
 
-Create local django settings in `/some/path/to/projects/dlvpef/world/etc/local_settings.py`:
+**It is optional settings.**
+
+If you need to change the default project settings - use `server_settings.py`.
+
+Create server django settings in `$BASE_DIR/src/basic/server_settings.py`:
+
+.. code-block::
+
+    (venv)$ cd $BASE_DIR/src/basic/
+    (venv)$ touch server_settings.py
+    (venv)$
+
+
+Create `server_settings` as, example:
 
 .. code-block:: python
 
@@ -83,13 +107,16 @@ Create local django settings in `/some/path/to/projects/dlvpef/world/etc/local_s
 
     # SESSIONS
     # ** Optional.
+    # It is recommended to store the sessions in the radis.
     SESSION_SERIALIZER='django.contrib.sessions.serializers.PickleSerializer'
     SESSION_ENGINE = 'redis_sessions.session'
     SESSION_REDIS_HOST = 'localhost'
     SESSION_REDIS_PORT = 6379
 
     # DATABASE
-    # ** Optional (you can use sqlite).
+    # ** Optional.
+    # For Django's projects recommended use PostgreSQL database.
+    # But, you can use any database: SQlite3, MySQL, PostgreSQL, etc:
     # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
     DATABASES = {
         'default': {
@@ -102,14 +129,13 @@ Create local django settings in `/some/path/to/projects/dlvpef/world/etc/local_s
     }
 
     # SECRET_KEY
-    # ** You must change this value - this is important! Do not save the security
-    #    key and a different password in the repository.
+    # ** You must change this value - this is important!
     SECRET_KEY = '987asd8jhg3^%&^%+eoegsv(1xp2#7_^=oxilhq)afy='
 
     # EMAIL SETTINGS
+    # Specify the mail settings to inform administrator about errors on the
+    # server and and communication with users.
     # ** For Gmail: http://www.google.com/accounts/DisplayUnlockCaptcha
-    # ** Specify the mail settings to inform administrator about errors on the
-    #    server and and communication with users.
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
     EMAIL_PORT = 587
@@ -127,12 +153,14 @@ Create local django settings in `/some/path/to/projects/dlvpef/world/etc/local_s
     ## EMAIL_HOST_PASSWORD = '<PASSWORD>'
 
 
-P.s. See examples in `dlvpef/world/dev/`, and use workpiece from `dlvpef/world/usr/options/`.
+P.s. See examples in `$BASE_DIR/world/dev/`, and use workpiece from `$BASE_DIR/world/usr/options/server_settings.py.ex`.
 
-Create database.
-++++++++++++++++
 
-**It is optional!** You can use any database.
+Create database
+---------------
+
+PostgreSQL
+~~~~~~~~~~
 
 .. code-block::
 
@@ -146,40 +174,46 @@ Create database.
     #\q
 
 
-Synchronize.
-++++++++++++
+MySQL
+~~~~~
 
 .. code-block::
 
-    (venv)$ pwd
-    /some/path/to/projects/dlvpef
-    (venv)$ cd src/
+    $ sudo mysql -uroot -p
+
+    drop database if exists `dlvpef`;
+    CREATE DATABASE `dlvpef` CHARACTER SET utf8 COLLATE utf8_general_ci;
+    GRANT ALL ON `dlvpef`.* TO `<USER>`@localhost IDENTIFIED BY '<PASSWORD>';
+    FLUSH PRIVILEGES;
+
+
+Synchronize
++++++++++++
+
+.. code-block::
+
+    (venv)$ cd $BASE_DIR/src/
     (venv)$ ./manage.py migrate
     (venv)$ ./manage.py createsuperuser
 
 
-Fixtures.
-+++++++++
+Fixtures
+++++++++
 
-In order to quickly create website's pages, you need to install the pages fixtures:
+In order to quickly create website's pages and any informations, you need to install the some fixtures:
 
 .. code-block::
 
-    (venv)$ pwd
-    /some/path/to/projects/dlvpef
-    (venv)$ cd src/
+    (venv)$ cd $BASE_DIR/src/
     (venv)$ ./manage.py loaddata apps/content/fixtures/pages.json
     (venv)$ ./manage.py loaddata apps/content/fixtures/informations.json
 
 
-Run.
-++++
+Test run
+++++++++
 
 .. code-block::
 
-    (venv)$ pwd
-    /some/path/to/projects/dlvpef
-    (venv)$ cd src/
+    (venv)$ cd $BASE_DIR/src/
     (venv)$ ./manage.py runserver 127.0.0.1:7171
-
 
