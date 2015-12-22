@@ -81,8 +81,40 @@ Python 3.4
     (venv)$ pip3 install -r requirements.txt
 
 
+Synchronize
++++++++++++
+
+.. code-block::
+
+    (venv)$ cd $BASE_DIR/src/
+    (venv)$ ./manage.py migrate
+    (venv)$ ./manage.py createsuperuser
+
+
+Fixtures
+++++++++
+
+In order to quickly create website's pages and any informations, you need to install the some fixtures:
+
+.. code-block::
+
+    (venv)$ cd $BASE_DIR/src/
+    (venv)$ ./manage.py loaddata apps/content/fixtures/pages.json
+    (venv)$ ./manage.py loaddata apps/content/fixtures/informations.json
+
+
+Test run
+++++++++
+
+.. code-block::
+
+    (venv)$ cd $BASE_DIR/src/
+    (venv)$ ./manage.py runserver 127.0.0.1:7171
+
+-------
+
 Server settings
-+++++++++++++++
+===============
 
 **It is optional settings.**
 
@@ -157,10 +189,10 @@ P.s. See examples in `$BASE_DIR/world/dev/`, and use workpiece from `$BASE_DIR/w
 
 
 Create database
----------------
++++++++++++++++
 
 PostgreSQL
-~~~~~~~~~~
+----------
 
 .. code-block::
 
@@ -175,7 +207,7 @@ PostgreSQL
 
 
 MySQL
-~~~~~
+-----
 
 .. code-block::
 
@@ -185,35 +217,4 @@ MySQL
     CREATE DATABASE `dlvpef` CHARACTER SET utf8 COLLATE utf8_general_ci;
     GRANT ALL ON `dlvpef`.* TO `<USER>`@localhost IDENTIFIED BY '<PASSWORD>';
     FLUSH PRIVILEGES;
-
-
-Synchronize
-+++++++++++
-
-.. code-block::
-
-    (venv)$ cd $BASE_DIR/src/
-    (venv)$ ./manage.py migrate
-    (venv)$ ./manage.py createsuperuser
-
-
-Fixtures
-++++++++
-
-In order to quickly create website's pages and any informations, you need to install the some fixtures:
-
-.. code-block::
-
-    (venv)$ cd $BASE_DIR/src/
-    (venv)$ ./manage.py loaddata apps/content/fixtures/pages.json
-    (venv)$ ./manage.py loaddata apps/content/fixtures/informations.json
-
-
-Test run
-++++++++
-
-.. code-block::
-
-    (venv)$ cd $BASE_DIR/src/
-    (venv)$ ./manage.py runserver 127.0.0.1:7171
 
