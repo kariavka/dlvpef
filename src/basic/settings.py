@@ -102,19 +102,15 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-##############################################################################
-# STANDARD EXTENSION                                                         #
-##############################################################################
+# Expand the default settings.
 # Loading extension parameters of standard configurations.
-# Use the ``local_settings.py`` to configure the local project.
-# Use the ``server_settings.py`` to configure the production project.
-try:
-    from .local_settings import *
-except ImportError:
-    pass
+# Use the ``project_settings.py`` to configure the local project.
+# Use the ``local_settings.py`` to configure the production project.
+
+from basic.project_settings import *
 
 try:
-    from .server_settings import *
+    from basic.local_settings import *
 except ImportError:
     pass
 

@@ -3,10 +3,9 @@
 *.swp
 *.core
 
-src/basic/server_settings.py
-src/basic/_server_settings.py
-src/basic/del.server_settings.py
-src/basic/server_settings.py.del
+src/db.sqlite3
+src/basic/local_settings.py
+src/basic/_local_settings.py
 
 *\.del*
 .idea/*
