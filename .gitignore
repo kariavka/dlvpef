@@ -33,3 +33,5 @@ world/var/www/media/*
 world/var/www/static/*
 !\.d
 
+basic/local_settings.py
+
