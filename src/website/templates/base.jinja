@@ -4,33 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}{{ information.title|defaults('dlvpef') }}{% endblock %}</title>
+    <title>{% block title %}dlvpef{% endblock %}</title>
 
     <link rel="stylesheet" href="{{ static('lib/bootstrap/3.3.6/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ static('this/css/style.css') }}" />
     <link rel="stylesheet" href="{{ static('this/css/media.css') }}" />
     <link rel="stylesheet" href="{{ static('this/css/expansions.css') }}" />
 
-    {# SEO #}
-    {% if information.seo_title %}
-        <meta name="title" content="{{ information.seo_title }}" />
-        <meta property="og:title" content="{{ information.seo_title }}" />
-    {% endif %}
-
-    {% if information.seo_keywords %}
-        <meta name="keywords" content="{{ information.seo_keywords }}" />
-    {% endif %}
-
-    {% if information.seo_description %}
-        <meta name="description" content="{{ information.seo_description }}" />
-        <meta property="og:description" content="{{ information.seo_description }}" />
-    {% endif %}
-
-    {#
-    <meta property="og:image" content="" />
-    <link rel="image_src" href="" />
-    <meta property="vk:image" content="" />
-    #}
+    {% block seo %}{% endblock %}
 
     {% block css %}{% endblock %}
 </head>
