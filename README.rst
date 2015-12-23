@@ -118,18 +118,18 @@ Server settings
 
 **It is optional settings.**
 
-If you need to change the default project settings - use `server_settings.py`.
+If you need to change the default project settings - use `local_settings.py`.
 
-Create server django settings in `$BASE_DIR/src/basic/server_settings.py`:
+Create server django settings in `$BASE_DIR/src/basic/local_settings.py`:
 
 .. code-block::
 
     (venv)$ cd $BASE_DIR/src/basic/
-    (venv)$ touch server_settings.py
+    (venv)$ touch local_settings.py
     (venv)$
 
 
-Create `server_settings` as, example:
+Create `local_settings` as, example:
 
 .. code-block:: python
 
@@ -185,7 +185,7 @@ Create `server_settings` as, example:
     ## EMAIL_HOST_PASSWORD = '<PASSWORD>'
 
 
-P.s. See examples in `$BASE_DIR/world/dev/`, and use workpiece from `$BASE_DIR/world/usr/options/server_settings.py.ex`.
+P.s. See examples in `$BASE_DIR/world/dev/`, and use workpiece from `$BASE_DIR/world/usr/options/`.
 
 
 Create database
