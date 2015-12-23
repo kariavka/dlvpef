@@ -175,7 +175,7 @@ ADMIN_TOOLS_INDEX_DASHBOARD = 'basic.admintools.CustomAdminDashboard'
 ADMIN_TOOLS_THEMING_CSS = 'admin/css/theming.css'
 
 # Recaptcha.
-# Add sites: dlvpef.org, weltwolke.com, 127.0.0.1, localhost
+# Add sites: diostim.com, dlvpef.org, weltwolke.com, 127.0.0.1, localhost
 RECAPTCHA_PUBLIC_KEY = '6LcYiRMTAAAAAGTQiXgASzyl4Ait3u6-DqgZCQk8'
 RECAPTCHA_PRIVATE_KEY = '6LcYiRMTAAAAAMYLRoxysBjxmPg3FPSlUWrRekHM'
 NOCAPTCHA = True
